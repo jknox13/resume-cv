@@ -1,0 +1,19 @@
+### TeX ###
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+
+## Intermediate documents:
+*.dvi
+*-converted-to.*
+
+### Editor ###
+.*sw[op]
+
+### Private/Job specific
+documents/coverletter.*
