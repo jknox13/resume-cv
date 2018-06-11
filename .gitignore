@@ -1,6 +1,8 @@
 ### TeX ###
 ## Core latex/pdflatex auxiliary files:
 *.aux
+*.bbl
+*.blg
 *.lof
 *.log
 *.lot

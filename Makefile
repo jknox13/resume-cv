@@ -1,13 +1,14 @@
 .PHONY: clean
 
-TEXCOMPILER = xelatex
+SOURCE_DIR=source
+DOCUMENTS_DIR=documents
 
-SOURCE_DIR = source
-DOCUMENT_SRCS = $(shell find $(SOURCE_DIR) -name '*.tex')
-DOCUMENTS_DIR = documents
 
-resume: $(SOURCE_DIR)/resume.tex $(DOCUMENT_SRCS)
-	TEXINPUTS=".:$(SOURCE_DIR)/:" $(TEXCOMPILER) -output-directory=$(DOCUMENTS_DIR) $<
+resume: $(SOURCE_DIR)/resume.tex
+	TEXINPUTS=".:$(SOURCE_DIR)/:" xelatex -output-directory=$(DOCUMENTS_DIR) $<
+
+bib:
+	BIBINPUTS=".:$(SOURCE_DIR)/:" bibtex $(DOCUMENTS_DIR)/resume
 
 clean:
-	rm -f $(DOCUMENTS_DIR)/*
+	rm -f $(DOCUMENTS_DIR)/*.{aux,log}
