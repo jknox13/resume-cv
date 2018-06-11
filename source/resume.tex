@@ -1,79 +1,135 @@
-%!TEX TS-program = xelatex
-%!TEX encoding = UTF-8 Unicode
-% Awesome CV LaTeX Template for CV/Resume
-%
-% This template has been downloaded from:
-% https://github.com/posquit0/Awesome-CV
-%
-% Author:
-% Claud D. Park <posquit0.bj@gmail.com>
-% http://www.posquit0.com
-%
-% Template license:
-% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+% Uses deedy-resume-class by:
 %
 
+\documentclass[]{deedy-resume-openfont}
+\usepackage{fancyhdr}
 
-%-------------------------------------------------------------------------------
-% CONFIGURATIONS
-%-------------------------------------------------------------------------------
-% A4 paper size by default, use 'letterpaper' for US letter
-\documentclass[11pt, a4paper]{awesome-cv}
-\usepackage{multicol}
+\pagestyle{fancy}
+\fancyhf{}
 
-% Configure page margins with geometry
-\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
-
-% Specify the location of the included fonts
-\fontdir[fonts/]
-
-% Color for highlights
-% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
-%                 awesome-nephritis, awesome-concrete, awesome-darknight
-\colorlet{awesome}{awesome-red}
-% Uncomment if you would like to specify your own color
-% \definecolor{awesome}{HTML}{CA63A8}
-
-
-% Set false if you don't want to highlight section with awesome color
-\setbool{acvSectionColorHighlight}{true}
-
-% If you would like to change the social information separator from a pipe (|) to something else
-\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
-
-
-%-------------------------------------------------------------------------------
-%	PERSONAL INFORMATION
-%	Comment any of the lines below if they are not required
-%-------------------------------------------------------------------------------
-% Available options: circle|rectangle,edge/noedge,left/right
-% \photo{./examples/profile.png}
-\input{assets/personal-info.tex}
-
-%-------------------------------------------------------------------------------
 \begin{document}
+\lastupdated
 
-% Print the header with above personal informations
-% Give optional argument to change alignment(C: center, L: left, R: right)
-\makecvheader[C]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     TITLE NAME
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\namesection{Joseph}{Knox}{
+| joseph.edward.knox@gmail.com
+| 509.823.9794
+| Github: \href{https://github.com/jknox13}{\bf jknox13}
+| LinkedIn: \href{https://www.linkedin.com/in/JosephKnox}{\bf Joseph Knox}
+}
 
-% Print the footer with 3 arguments(<left>, <center>, <right>)
-% Leave any of these blank if they are not needed
-\makecvfooter
-  {\today}
-  {Joseph E. Knox~~~·~~~Résumé}
-  {\thepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     COLUMN ONE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{minipage}[t]{0.35\textwidth}
 
-%-------------------------------------------------------------------------------
-%	CV/RESUME CONTENT
-%	Each section is imported separately, open each file in turn to modify content
-%-------------------------------------------------------------------------------
-\input{assets/summary.tex}
-\input{assets/education.tex}
-\input{assets/experience.tex}
-\input{assets/skills.tex}
-\input{assets/projects.tex}
+%     EDUCATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%-------------------------------------------------------------------------------
-\end{document}
+\section{Education}
+
+\subsection{University of Washington}
+\descript{M.S. in Applied Mathematics}
+\location{June 2018 | Seattle, WA}
+\sectionsep
+
+\subsection{University of Washington}
+\descript{B.S. in Industrial Engineering}
+Minor in Applied Mathematics \\
+\location{June 2016 | Seattle, WA}
+\sectionsep
+
+%     SKILLS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Skills}
+\subsection{Programming}
+{\bf{Fluent:}} \textbullet{} Python \textbullet{} \LaTeX\ \\
+{\bf{Conversational:}} \textbullet{} C \textbullet{} Bash/sh \textbullet{} SQL \\
+\sectionsep
+
+%     PROJECTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Projects}
+\runsubsection{mcmodels} \descript{| Maintainer}
+mouse\_connectivity\_models \\
+\location{Dec 2017 –  | Python}
+Python library for mesoscopic full-brain connectivity models in mouse.
+\sectionsep
+
+\runsubsection{ristretto} \descript{| Primary Contributer}
+\location{April 2018 - | Python}
+Randomized matrix factorization library written in Python.
+\sectionsep
+
+%     COURSEWORK
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Coursework}
+\subsection{Graduate}
+Combinatorial Optimization \\
+Computational Methods for Data Analysis \\
+Computational Neuroscience \\
+Statistical Analysis of Social Networks \\
+Statistical Computing
+\sectionsep
+
+\subsection{Undergraduate}
+Stochastic Modeling and Decision Analysis \\
+Linear and Network Programming \\
+High-Performance Scientific Computing \\
+Machine Learning
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     COLUMN TWO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.63\textwidth}
+
+%     EXPERIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Experience}
+\runsubsection{Allen Institute for Brain Science}
+\descript{| Data Analyst }
+\location{June 2017 - Present | Seattle, WA}
+\sectionsep
+
+\runsubsection{RATLab LLC}
+\descript{| Research Intern }
+\location{July 2016 – Jan 2017 | Seattle, WA}
+\vspace{\topsep}
+\begin{tightemize}
+\item {Designed and conducted experiments for product research and development}
+\item {Wrote statistical machine learning scripts to investigate technology efficacy and optimize hardware design}
+\item {Worked in multidisciplinary team with dynamic responsibilities including systems administration, hardware design, and market research}
+\end{tightemize}
+\sectionsep
+
+\runsubsection{College Works Painting}
+\descript{| Manager }
+\location{Feb 2015 – Sept 2015 | Seattle, WA}
+\begin{tightemize}
+\item {Ran marketing campaign resulting in 8 new clients resulting in \$35,000 in personal sales}
+\item {Acted as project manager, recruiting, hiring, and training 3 employees (with zero employee turnover)}
+\item {Planned production schedule and successfully coordinated all projects, interacting with clients daily and ensured customer satisfaction}
+\end{tightemize}
+\sectionsep
+
+%     PUBLICATIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Publications}
+\renewcommand\refname{\vspace{-10mm}} % Couldn't get this working from the .cls file
+\bibliographystyle{abbrv}
+\bibliography{publications}
+\nocite{*}
+
+\end{minipage}
+\end{document}  \documentclass[]{article}

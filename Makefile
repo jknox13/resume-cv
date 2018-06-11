@@ -1,19 +1,12 @@
 .PHONY: clean
 
-TEXCOMPILER = lualatex
+TEXCOMPILER = xelatex
 
 SOURCE_DIR = source
-ASSETS_DIR = $(SOURCE_DIR)/assets
-DOCUMENT_SRCS = $(shell find $(ASSETS_DIR) -name '*.tex')
+DOCUMENT_SRCS = $(shell find $(SOURCE_DIR) -name '*.tex')
 DOCUMENTS_DIR = documents
 
 resume: $(SOURCE_DIR)/resume.tex $(DOCUMENT_SRCS)
-	TEXINPUTS=".:$(SOURCE_DIR)/:" $(TEXCOMPILER) -output-directory=$(DOCUMENTS_DIR) $<
-
-cv: $(SOURCE_DIR)/cv.tex $(DOCUMENT_SRCS)
-	TEXINPUTS=".:$(SOURCE_DIR)/:" $(TEXCOMPILER) -output-directory=$(DOCUMENTS_DIR) $<
-
-coverletter: $(SOURCE_DIR)/coverletter.tex
 	TEXINPUTS=".:$(SOURCE_DIR)/:" $(TEXCOMPILER) -output-directory=$(DOCUMENTS_DIR) $<
 
 clean:
